@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pala | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <img src="{% static 'portfolio/profilePicture.jpg' %}" alt="Pala" class="profile-img">
+            <h1>Pala</h1>
+            <p class="subtitle">Software Developer & Cybersecurity Enthusiast</p>
+        </header>
+
+        <!-- ABOUT ME SECTION -->
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p class="about-text">
+                Hello! I'm a passionate developer focused on building secure, efficient web applications. 
+                I enjoy exploring backend architectures using Python and Django, creating full-stack projects, 
+                and diving into ethical hacking and network security challenges. 
+                Instead of a static PDF, I built this space to show my code configurations and deployment skills in real-time.
+            </p>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section>
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                {% for project in projects %}
+                    <div class="project-card">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-img">
+                        {% endif %}
+                        
+                        <h3>{{ project.title }}</h3>
+                        <span class="tech-tag">{{ project.technology }}</span>
+                        <p>{{ project.description }}</p>
+
+                        {% if project.url %}
+                            <a href="{{ project.url }}" target="_blank" class="project-link">View Project</a>
+                        {% endif %}
+                    </div>
+                {% empty %}
+                    <p>No projects showcased yet. Check back soon!</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section">
+            <h2>Get In Touch</h2>
+            <p class="about-text">I'm currently open to new opportunities, collaboration on open-source tools, or security research projects.</p>
+            
+            <div class="social-links">
+                <!-- Replace these hrefs with your actual profile links later! -->
+                <a href="https://github.com" target="_blank" class="social-icon">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon">LinkedIn</a>
+                <a href="https://hackthebox.com" target="_blank" class="social-icon">Hack The Box</a>
+            </div>
+
+            <!-- Replace with your professional email address -->
+            <a href="mailto:your.email@example.com" class="email-btn">Email Me Directly</a>
+        </section>
+    </div>
+
+</body>
+</html>
