@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include('portfolio.urls')),
 ]
 
-# Append this so Django can serve uploaded images while we are developing locally
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serves media files (uploaded project photos/GIFs)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

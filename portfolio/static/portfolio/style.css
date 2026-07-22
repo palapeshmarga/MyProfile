@@ -29,6 +29,7 @@ header {
     border: 3px solid #00adb5;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    object-position: center 20%;
 }
 
 h1 {
