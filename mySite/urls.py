@@ -24,6 +24,6 @@ urlpatterns = [
     path('', include('portfolio.urls')),
 ]
 
-# Serves media files (uploaded project photos/GIFs)
+# Serves uploaded media during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

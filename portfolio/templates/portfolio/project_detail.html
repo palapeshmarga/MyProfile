@@ -14,40 +14,43 @@
         <h1 style="margin-top: 20px; font-size: 2.5rem;">{{ project.title }}</h1>
         <span class="tech-tag" style="font-size: 1rem; padding: 6px 12px;">{{ project.technology }}</span>
 
-        <!-- Main Banner Image/GIF -->
-        {% if project.featured_image %}
+        <!-- Main Banner Image/GIF (Matches project.thumbnail in models.py) -->
+        {% if project.thumbnail %}
             <div style="margin: 25px 0;">
-                <img src="{{ project.featured_image.url }}" alt="{{ project.title }}" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             </div>
         {% endif %}
 
-        <!-- Links -->
+        <!-- Links (Matches project.demo_url and project.github_url in models.py) -->
         <div style="display: flex; gap: 15px; margin-bottom: 30px;">
-            {% if project.live_url %}
-                <a href="{{ project.live_url }}" target="_blank" class="email-btn" style="text-decoration: none;">Visit Live Demo</a>
+            {% if project.demo_url %}
+                <a href="{{ project.demo_url }}" target="_blank" class="email-btn" style="text-decoration: none;">Visit Live Demo</a>
             {% endif %}
             {% if project.github_url %}
                 <a href="{{ project.github_url }}" target="_blank" class="social-icon" style="padding: 10px 20px; text-decoration: none;">GitHub Code</a>
             {% endif %}
         </div>
 
-        <!-- Description -->
+        <!-- Description (Matches project.description in models.py) -->
         <div class="about-section">
             <h2>About This Project</h2>
-            <p class="about-text" style="white-space: pre-line; line-height: 1.8;">{{ project.full_description }}</p>
+            <p class="about-text" style="white-space: pre-line; line-height: 1.8;">{{ project.description }}</p>
         </div>
 
-        <!-- Additional Screenshots, GIFs, & Videos Gallery -->
+        <!-- Gallery (Matches item.file in ProjectMedia model) -->
         {% if project.media_files.all %}
             <div class="about-section" style="margin-top: 30px;">
                 <h2>Project Gallery & Demos</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px;">
                     {% for item in project.media_files.all %}
                         <div style="background: #222831; padding: 12px; border-radius: 8px;">
-                            {% if item.media_type == 'image' and item.image_file %}
-                                <img src="{{ item.image_file.url }}" alt="Gallery Image" style="width: 100%; border-radius: 6px;">
-                            {% elif item.media_type == 'video_url' and item.video_url %}
-                                <p style="margin-bottom: 8px;"><a href="{{ item.video_url }}" target="_blank" style="color: #00adb5;">Watch Video Demo ↗</a></p>
+                            {% if item.media_type == 'image' and item.file %}
+                                <img src="{{ item.file.url }}" alt="Gallery Image" style="width: 100%; border-radius: 6px;">
+                            {% elif item.media_type == 'video' and item.file %}
+                                <video controls style="width: 100%; border-radius: 6px;">
+                                    <source src="{{ item.file.url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             {% endif %}
                             
                             {% if item.caption %}
