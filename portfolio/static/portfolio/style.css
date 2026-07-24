@@ -187,4 +187,5 @@ h2 {
 
 .email-btn:hover {
     background-color: #008c9e;
+    box-shadow: 0px 0px 100px 10px rgba(0, 172, 181, 0.323);
 }
