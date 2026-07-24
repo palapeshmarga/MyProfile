@@ -166,6 +166,10 @@ h2 {
     transition: background-color 0.2s, border-color 0.2s;
 }
 
+.hackthebox-logo {
+    filter: invert(100%);
+}
+
 .social-icon:hover {
     background-color: rgba(0, 173, 181, 0.1);
     border-color: #00adb5;
