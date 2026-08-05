@@ -19,22 +19,26 @@
         </header>
 
         <!-- BIOGRAPHY / ABOUT ME -->
+        <h2>About Me</h2>
         <section class="about-section">
-            <h2>About Me</h2>
             <p class="about-text">
-                I am an IT graduate from <strong>Soran University</strong> with a strong foundation in creating robust, full-stack web applications. As a fast learner who thrives in collaborative environments, I combine my development skills with a dedicated focus on <strong>Cybersecurity</strong>. My goal is to build web applications that aren't just highly functional and beautifully designed, but structurally secure against modern vulnerabilities. 
+                I am an IT graduate from <strong>Soran University</strong> with a strong foundation in creating robust, full-stack web applications. As a fast learner who thrives in collaborative environments, I combine my development skills with a dedicated focus on <strong>Cybersecurity</strong>. My goal is to build web applications that aren't just highly functional and beautifully designed, but structurally secure against modern vulnerabilities.
             </p>
             <p class="about-text">
                 Beyond traditional programming, I actively leverage modern AI workflows to accelerate development, optimize logic, and solve complex debugging problems efficiently.
             </p>
         </section>
 
+        <div style="border-bottom: red;border-bottom: 1px solid #3a3a3a;margin-top: 40px;"></div>
+
+
+
         <!-- CORE SKILLS & ADVANTAGES -->
+        <h2>Skills & Expertise</h2>
         <section class="about-section" style="margin-top: 25px;">
-            <h2>Skills & Expertise</h2>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 15px;">
                 <div>
-                    <strong style="color: #00adb5;">Languages & Frameworks:</strong> 
+                    <strong style="color: #00adb5;">Languages & Frameworks:</strong>
                     <p style="margin: 5px 0 0 0; color: #b3b3b3;">Python (Advanced), PHP (Laravel), JavaScript, HTML, Django, CSS & UI/UX Page Design</p>
                 </div>
                 <div style="border-top: 1px solid #2d2d2d; padding-top: 15px;">
@@ -48,15 +52,16 @@
             </div>
         </section>
 
+        <div style="border-bottom: red;border-bottom: 1px solid #3a3a3a;margin-top: 40px;"></div>
+
         <!-- WORK EXPERIENCE -->
+        <h2>Professional Experience</h2>
         <section>
-            <h2>Professional Experience</h2>
-            
             <!-- KurdTeam Experience -->
             <div class="project-card" style="margin-bottom: 20px; width: 100%; box-sizing: border-box;">
-                <h3 style="margin: 0;">Full-Stack Developer | KurdTeam</h3>
+                <h3 style="margin: 0;">Lead Full-Stack Engineer | KurdTeam</h3>
                 <span class="tech-tag" style="margin-top: 8px;">PHP Laravel, JavaScript, Team Environment</span>
-                <p>Collaborated closely within a development team to engineer and deploy large-scale software systems, including academic application infrastructure for <strong>Duhok University</strong>, management portals for public schools, and automated supermarket cashier engines.</p>
+                <p>Architected and deployed high-performance, large-scale software systems within an agile development team. Engineered robust management portals for public <strong>Schools</strong>, automated enterprise <strong>Supermarket Cashier</strong> engines, and pioneered the foundational infrastructure where we have created big systems.</p>
             </div>
 
             <!-- Independent Experience -->
@@ -66,6 +71,8 @@
                 <p>Independently architected, developed, and deployed a complete standalone cashier management system for the <strong>Swedish Shop</strong> retail outlet in Soran, focusing heavily on reliable transaction flows and local database stability.</p>
             </div>
         </section>
+
+        <div style="border-bottom: red;border-bottom: 1px solid #3a3a3a;margin-top: 40px;"></div>
 
         <!-- DYNAMIC PROJECTS SHOWCASE -->
         <section>
@@ -77,7 +84,7 @@
                             {% if project.thumbnail %}
                                 <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}" class="project-img">
                             {% endif %}
-                            
+
                             <h3>{{ project.title }}</h3>
                             <span class="tech-tag">{{ project.technology }}</span>
                             <p>{{ project.tagline }}</p>
@@ -91,11 +98,12 @@
             </div>
         </section>
 
+
         <!-- CONTACT & CALL TO ACTION -->
         <section class="contact-section">
             <h2 style="border-left:none;">Get In Touch</h2>
             <p class="about-text">I am ready to bring reliable development and a security-focused mindset to your team. Let's connect.</p>
-            
+
             <div class="social-links">
                 <!-- Update these placeholder href attributes inside the quotes whenever you wish! -->
                 <a href="https://github.com/palapeshmarga" target="_blank" class="social-icon"><img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_1280.png" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 8px;">GitHub</a>
@@ -103,7 +111,32 @@
                 <a href="https://app.hackthebox.com/users/3468660?profile-top-tab=machines&ownership-period=3M&profile-bottom-tab=prolabs" target="_blank" class="social-icon"><img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/hackthebox-x24e2j9cksob570h9epxb.png/hackthebox-gzgxni5aeyvdzirjyqvzlf.png?_a=DATAiZAAZAA0" class="hackthebox-logo" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 8px;">HackTheBox</a>
             </div>
 
-            <a href="mailto:https://mail.google.com/mail/u/0/#inbox?compose=new" class="email-btn">Email Me Directly</a><br> <br>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRspPXWzjTBxKFWKlwhssqRxtZMnvSFPncfcVQChfTKpxLVvLgNWcVPqvQJKkzXWxbhJXkQ"
+               id="gmailLink"
+               class="email-btn"
+               target="_blank"
+               data-email="palapeshmarga4@gmail.com" >
+                Email Me Directly
+            </a>
+
+
+            <script>
+            (function() {
+                var link = document.getElementById('gmailLink');
+                if (!link) return;
+
+                var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+                if (isMobile) {
+                    var email = link.getAttribute('data-email');
+
+                    link.href = 'mailto:' + email;
+                    link.removeAttribute('target');
+                }
+            })();
+            </script>
+
+            <br> <br>
             <p style="font-family: Georgia, serif; font-size: 1.25rem; color: #b3b3b3; text-align: center;">
                 <strong>palapeshmarga4@gmail.com</strong>
             </p>
